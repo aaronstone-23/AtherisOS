@@ -16,7 +16,7 @@ export default function Taskbar() {
     const { openApp, activeApp } = useOSStore();
     
     const dockItems = [
-        { id: 'start', label: 'Start Menu', icon: LayoutGrid, action: () => openApp('startMenu') },
+        { id: 'startMenu', label: 'Start Menu', icon: LayoutGrid, action: () => openApp('startMenu') },
     { id: 'fileExplorer', label: 'File Explorer', icon: Folder, action: () => openApp('fileExplorer') },
     { id: 'textEditor', label: 'Text Editor', icon: FileText, action: () => openApp('textEditor') },
     { id: 'terminal', label: 'Terminal', icon: Terminal, action: () => openApp('terminal') },

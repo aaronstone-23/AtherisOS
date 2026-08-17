@@ -43,12 +43,21 @@ export const useOSStore = create((set) => ({
             ),
         })),
 
-    closewindow: (id) =>
+    updateWinSize: (id, { width, height, position }) =>
         set((state) => ({
-            openWindows: state.openWindows.filter(
-                (win) => win.id !== id
+            openWindows: state.openWindows.map((win) =>
+                win.id === id
+                    ? { ...win, size: { width, height }, ...(position ? { position } : {}) }
+                    : win
             ),
         })),
+
+    closewindow: (id) =>
+        set((state) => {
+            const openWindows = state.openWindows.filter((win) => win.id !== id);
+            const topWindow = [...openWindows].sort((a, b) => b.zIndex - a.zIndex)[0];
+            return { openWindows, activeApp: topWindow?.appId ?? null };
+        }),
     
     toggleMinimize: (id)=>
         set((state)=> ({
@@ -81,8 +90,8 @@ export const useOSStore = create((set) => ({
             const appDetails = {
                 textEditor: { title: "Text Editor", component: "TextEditor" },
                 terminal: { title: "Terminal", component: "Terminal" },
-                fileExplorer: {title: "File Expplorer", component: "FileExplorer"},
-                settings: {tittle:"Settings", component: "Settings"},
+                fileExplorer: {title: "File Explorer", component: "FileExplorer"},
+                settings: {title:"Settings", component: "Settings"},
                 easterEgg: {title: "???", component: "EasterEgg"},
                 trash: {title: "Recycle Bin", component: "Trash"},
             }[appId] ?? { title: appId, component: "MissingApp" };
