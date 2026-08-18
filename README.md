@@ -1,10 +1,10 @@
-# AtherisOS 🐍💻
+# AtherisOS
 
 A sleek, web-based operating system interface built with **React**, **Vite**, and **Tailwind CSS v4**. **AtherisOS** brings desktop-like window management, custom applications, and interactive workflows straight to your browser.
 
 ---
 
-## 🌟 Features
+## Features
 
 * **Desktop Environment:** Interactive, draggable, and resizable application windows via `react-rnd`.
 * **Centralized State Management:** Unified OS context (`useOSStore`) handling window states, active app focal tracking, and system configs.
@@ -13,7 +13,7 @@ A sleek, web-based operating system interface built with **React**, **Vite**, an
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 * **Frontend Framework:** React 18 / 19
 * **Build Tool:** Vite
@@ -22,7 +22,7 @@ A sleek, web-based operating system interface built with **React**, **Vite**, an
 
 ---
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -56,7 +56,7 @@ Navigate to `http://localhost:5173` to launch AtherisOS!
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 AtherisOS/
@@ -77,7 +77,7 @@ AtherisOS/
 
 ---
 
-## 🗺️ Roadmap
+##  Roadmap
 
 * [x] Initial Vite + React environment setup
 * [x] Tailwind CSS v4 migration
@@ -87,11 +87,3 @@ AtherisOS/
 * [ ] **Phase 4:** Theme customization & dynamic wallpapers
 
 ---
-
-## 📜 License
-
-This project is licensed under the **MIT License**.
-
-```
-
-```
